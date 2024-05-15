@@ -1,0 +1,33 @@
+
+<div class="test1">
+    <label>Brand</label>
+    <input  [(ngModel)]="car.brand" type="text">
+
+
+    <label>Model</label>
+    <input [(ngModel)]="car.model" type="text">
+
+    <label>Year</label>
+    <input [(ngModel)]="car.year" type="text">
+
+    <label>Color</label>
+    <input [(ngModel)]="car.color" type="text">
+
+    <label>Image</label>
+     <input [(ngModel)]="car.img" type="text">
+    <button (click) = "showthiscard()">click to add cards</button>
+</div>
+
+
+
+<div *ngFor="let car of carList let i = index" class = "test2">
+    <div class ="test3" *ngIf ="test == true">
+    <h1>{{car.brand}}</h1>
+    <h1>{{car.model}}</h1>
+    <h1>{{car.year}}</h1>
+    <h1>{{car.color}}</h1>
+    <img [src] = "car.img">
+    </div>
+    <button (click)="deletethiscard(i)">remove this card</button>
+    <button (click)="editbtn(i)">click to edit</button>
+</div>
